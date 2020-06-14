@@ -1,0 +1,114 @@
+{
+  "name": "@folio/search",
+  "version": "2.0.0",
+  "description": "Search across the Codex",
+  "repository": "folio-org/ui-search",
+  "publishConfig": {
+    "registry": "https://repository.folio.org/repository/npm-folio/"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "main": "src/index.js",
+  "bugs": {
+    "url": "https://issues.folio.org/projects/UISE",
+    "email": "mike@indexdata.com"
+  },
+  "stripes": {
+    "type": "app",
+    "displayName": "ui-search.meta.title",
+    "fullName": "Codex Search",
+    "defaultPreviewWidth": "40%",
+    "helpPage": "https://wiki.folio.org/pages/viewpage.action?pageId=1415393",
+    "route": "/codexsearch",
+    "home": "/codexsearch?filters=available.true&qindex=title&query=&sort=title",
+    "hasSettings": false,
+    "queryResource": "query",
+    "okapiInterfaces": {
+      "codex": "3.0"
+    },
+    "permissionSets": [
+      {
+        "permissionName": "module.search.enabled",
+        "displayName": "UI: Codex Search module is enabled",
+        "visible": true
+      }
+    ],
+    "translations": {
+      "en": {
+        "search": "Search",
+        "resultCount": "{count, number} {count, plural, one {Record found} other {Records found}}"
+      }
+    },
+    "icons": [
+      {
+        "name": "local-source",
+        "alt": "local inventory",
+        "title": "a local source of items that can be checked out"
+      },
+      {
+        "name": "kb",
+        "fileName": "generic",
+        "alt": "knowledge base",
+        "title": "a knowledge base of e-resources available for viewing"
+      },
+      {
+        "name": "app",
+        "alt": "Codex Search",
+        "title": "Search across the Codex"
+      }
+    ],
+    "welcomePageEntries": [
+      {
+        "iconName": "local-source",
+        "headline": "Search local inventory and e-resources together!",
+        "description": "The Codex Search application lets you search across multiple sources of physical and electronic resources ina unified way"
+      },
+      {
+        "iconName": "kb",
+        "headline": "This is a technology preview",
+        "description": "The present version of this application is incomplete, and will subsequently be expanded in a number of ways."
+      }
+    ],
+    "libraryCredits": "This application is made possible by [the React library](https://reactjs.org/)."
+  },
+  "scripts": {
+    "start": "stripes serve",
+    "lint": "eslint .",
+    "test": "stripes test karma"
+  },
+  "devDependencies": {
+    "@bigtest/interactor": "^0.9.2",
+    "@bigtest/mirage": "^0.0.1",
+    "@bigtest/mocha": "^0.5.2",
+    "@bigtest/react": "^0.1.2",
+    "@folio/eslint-config-stripes": "^5.0.0",
+    "@folio/stripes": "^3.0.0",
+    "@folio/stripes-cli": "^1.4.0",
+    "@folio/stripes-core": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.2.1",
+    "mocha": "^5.2.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-router-dom": "^4.0.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "sinon": "^7.2.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react-hot-loader": "^4.3.12"
+  },
+  "peerDependencies": {
+    "@folio/stripes": "^3.0.0",
+    "react-intl": "^2.9.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.0.0",
+    "react": "*"
+  }
+}
